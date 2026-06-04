@@ -1,4 +1,4 @@
-# ¿Vehicle Monitor Dashboard 🚗
+# Vehicle Monitor Dashboard 🚗
 
 ## Sobre el proyecto
 
@@ -8,7 +8,7 @@ La idea era construir una aplicación que permitiera monitorear vehículos desde
 
 La aplicación permite seleccionar vehículos, visualizar su ubicación en un mapa y consultar información relevante como estado de conexión, velocidad y última actualización.
 
-----------------------------------------------------------
+---
 
 ## ¿Qué incluye la aplicación?
 
@@ -35,7 +35,7 @@ Actualmente muestra:
 * Velocidad.
 * Última actualización.
 
----------------------------------------------------------
+---
 
 ## Modo oscuro
 
@@ -43,7 +43,7 @@ Pensando en usuarios que podrían pasar largas jornadas frente a la herramienta,
 
 El objetivo no fue únicamente cambiar colores, sino mantener una buena legibilidad y contraste en ambos modos.
 
----------------------------------------------------------
+---
 
 ## Estados de carga
 
@@ -53,7 +53,7 @@ Para evitar pantallas vacías o cambios bruscos en la interfaz, se implementó u
 
 Esto ayuda a que la experiencia se sienta más fluida y profesional.
 
-----------------------------------------------------------
+---
 
 ## Manejo de errores
 
@@ -63,7 +63,7 @@ Si ocurre un problema durante la carga de información, el usuario recibe un men
 
 La intención fue evitar situaciones donde la aplicación simplemente quede en blanco o muestre errores técnicos difíciles de entender.
 
-----------------------------------------------------------
+---
 
 ## Accesibilidad
 
@@ -77,7 +77,7 @@ Se realizaron varias mejoras para que la aplicación sea más accesible:
 
 La idea fue asegurar que la interfaz pueda ser utilizada por más personas y cumplir buenas prácticas de accesibilidad.
 
----------------------------------------------------------
+---
 
 ## Tecnologías utilizadas
 
@@ -89,7 +89,7 @@ La idea fue asegurar que la interfaz pueda ser utilizada por más personas y cum
 * Git y GitHub
 * Vercel
 
-----------------------------------------------------------
+---
 
 ## Cómo ejecutar el proyecto
 
@@ -123,7 +123,7 @@ Generar versión de producción:
 npm run build
 ```
 
-----------------------------------------------------------
+---
 
 ## Decisiones de diseño
 
@@ -135,7 +135,17 @@ Durante el desarrollo intenté priorizar tres aspectos:
 
 **Accesibilidad:** que los componentes fueran navegables y comprensibles para diferentes tipos de usuarios.
 
-----------------------------------------------------------
+---
+
+## Retos y aprendizajes
+
+Uno de los principales retos fue diseñar una experiencia que respondiera adecuadamente a distintos estados de la aplicación, incluyendo carga de información, errores y visualización de datos.
+
+También se realizó una exploración inicial de integración con Traccar para consumir datos reales. Aunque la autenticación fue exitosa, el entorno de demostración presentó restricciones de autorización para la consulta de dispositivos desde el frontend, por lo que se mantuvo una capa de datos simulados para garantizar una experiencia funcional durante la evaluación.
+
+Esta experiencia permitió entender mejor los desafíos asociados a la integración con servicios externos y reforzó la importancia de diseñar interfaces resilientes ante fallos o limitaciones técnicas.
+
+---
 
 ## Próximos pasos
 
@@ -143,10 +153,10 @@ Como mejora futura, la aplicación está preparada para integrar datos reales de
 
 También sería interesante incorporar animaciones suaves para el movimiento del marcador, indicadores más avanzados de estado y métricas adicionales para el monitoreo de flotas.
 
-----------------------------------------------------------
+---
 
 ## Autora
 
 Wendy Puello
 
-Prueba Técnica — Design Engineer (UX/UI)
+Desarrollado como parte de la prueba técnica para el rol de Design Engineer (UX/UI).
