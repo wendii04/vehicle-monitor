@@ -2,11 +2,11 @@
 
 ## Sobre el proyecto
 
-Este proyecto fue desarrollado como solución para una prueba técnica de Design Engineer (UX/UI).
+Este proyecto fue desarrollado como parte de una prueba técnica para el rol de Design Engineer (UX/UI).
 
-La idea era construir una aplicación que permitiera monitorear vehículos desde una interfaz simple, clara y fácil de usar. Más allá de mostrar datos en una pantalla, el objetivo fue diseñar una experiencia que funcionara bien en situaciones reales de monitoreo, donde la rapidez para encontrar información y la legibilidad son fundamentales.
+El objetivo era crear una herramienta que permitiera monitorear vehículos de forma simple, clara e intuitiva. Más allá de mostrar información en pantalla, quise construir una experiencia que ayudara a encontrar rápidamente lo importante y que se sintiera fluida incluso en situaciones de monitoreo continuo.
 
-La aplicación permite seleccionar vehículos, visualizar su ubicación en un mapa y consultar información relevante como estado de conexión, velocidad y última actualización.
+La aplicación permite seleccionar vehículos, visualizar su ubicación en un mapa interactivo y consultar información relevante como su estado de conexión, velocidad y última actualización.
 
 ---
 
@@ -22,11 +22,11 @@ La selección se actualiza inmediatamente en el resto de la interfaz, manteniend
 
 La ubicación del vehículo seleccionado se muestra en un mapa utilizando Leaflet.
 
-Cada vez que cambia el vehículo, el marcador y la información asociada se actualizan automáticamente.
+Cada vez que cambia el vehículo, el marcador y la información asociada se actualizan automáticamente para mantener la información sincronizada.
 
 ### Tarjeta de estado
 
-La información principal del vehículo se presenta en una tarjeta diseñada para facilitar la lectura rápida.
+La información principal del vehículo se presenta en una tarjeta diseñada para facilitar una lectura rápida y clara.
 
 Actualmente muestra:
 
@@ -39,35 +39,37 @@ Actualmente muestra:
 
 ## Modo oscuro
 
-Pensando en usuarios que podrían pasar largas jornadas frente a la herramienta, se implementó un sistema de tema claro y oscuro.
+Como este tipo de herramientas suelen utilizarse durante largos periodos de tiempo, incorporé un modo claro y oscuro para mejorar la comodidad visual y adaptarse a diferentes condiciones de uso.
 
-El objetivo no fue únicamente cambiar colores, sino mantener una buena legibilidad y contraste en ambos modos.
+El objetivo no fue únicamente cambiar colores, sino mantener una buena legibilidad, contraste y consistencia visual en ambos modos.
 
 ---
 
 ## Estados de carga
 
-Uno de los aspectos más importantes de la prueba era el manejo de estados de transición.
+Uno de los aspectos que más cuidé fue la experiencia durante la carga de información.
 
-Para evitar pantallas vacías o cambios bruscos en la interfaz, se implementó un Skeleton Loading que mantiene la estructura visual mientras la aplicación carga la información.
+En lugar de mostrar espacios vacíos o cambios bruscos en la interfaz, implementé un Skeleton Loading que mantiene la estructura visual mientras los datos se cargan.
 
-Esto ayuda a que la experiencia se sienta más fluida y profesional.
+Esto ayuda a que la experiencia se sienta más estable, fluida y profesional.
 
 ---
 
 ## Manejo de errores
 
-También se implementó un Error State dedicado.
+También implementé un Error State dedicado para los escenarios donde la información no pueda cargarse correctamente.
 
-Si ocurre un problema durante la carga de información, el usuario recibe un mensaje claro junto con una acción para reintentar el proceso.
+En estos casos, el usuario recibe un mensaje claro acompañado de una acción para reintentar el proceso.
 
-La intención fue evitar situaciones donde la aplicación simplemente quede en blanco o muestre errores técnicos difíciles de entender.
+La intención fue evitar situaciones donde la aplicación simplemente quede en blanco o muestre errores difíciles de interpretar.
 
 ---
 
 ## Accesibilidad
 
-Se realizaron varias mejoras para que la aplicación sea más accesible:
+La accesibilidad fue un aspecto importante durante el desarrollo.
+
+Se incorporaron diferentes mejoras para facilitar la navegación y la interacción con la aplicación:
 
 * Navegación mediante teclado.
 * Indicadores visuales de foco.
@@ -75,13 +77,14 @@ Se realizaron varias mejoras para que la aplicación sea más accesible:
 * Uso de regiones `aria-live`.
 * Estructura semántica para la información del vehículo.
 
-La idea fue asegurar que la interfaz pueda ser utilizada por más personas y cumplir buenas prácticas de accesibilidad.
+La intención fue construir una interfaz que pudiera ser utilizada por más personas y que siguiera buenas prácticas de accesibilidad web.
 
 ---
 
 ## Tecnologías utilizadas
 
 * React
+* JavaScript (ES6+)
 * Vite
 * Tailwind CSS
 * Leaflet
@@ -127,23 +130,27 @@ npm run build
 
 ## Decisiones de diseño
 
-Durante el desarrollo intenté priorizar tres aspectos:
+Durante el desarrollo intenté priorizar tres aspectos principales:
 
-**Claridad visual:** que la información importante fuera fácil de encontrar.
+**Claridad visual:** que la información más importante fuera fácil de encontrar y entender.
 
-**Resiliencia:** que la aplicación respondiera correctamente ante tiempos de carga o errores.
+**Resiliencia:** que la aplicación respondiera correctamente ante tiempos de carga, errores o escenarios inesperados.
 
-**Accesibilidad:** que los componentes fueran navegables y comprensibles para diferentes tipos de usuarios.
+**Accesibilidad:** que los componentes fueran navegables, comprensibles y utilizables por diferentes tipos de usuarios.
 
 ---
 
 ## Retos y aprendizajes
 
-Uno de los principales retos fue diseñar una experiencia que respondiera adecuadamente a distintos estados de la aplicación, incluyendo carga de información, errores y visualización de datos.
+Uno de los mayores retos fue pensar la aplicación más allá de los datos y enfocarme en cómo debía comportarse en distintos escenarios.
 
-También se realizó una exploración inicial de integración con Traccar para consumir datos reales. Aunque la autenticación fue exitosa, el entorno de demostración presentó restricciones de autorización para la consulta de dispositivos desde el frontend, por lo que se mantuvo una capa de datos simulados para garantizar una experiencia funcional durante la evaluación.
+Por eso dediqué especial atención a los estados de carga, error y selección de vehículos, buscando que la experiencia se mantuviera clara y consistente en todo momento.
 
-Esta experiencia permitió entender mejor los desafíos asociados a la integración con servicios externos y reforzó la importancia de diseñar interfaces resilientes ante fallos o limitaciones técnicas.
+También realicé una exploración inicial de integración con Traccar para trabajar con datos reales. Aunque la autenticación fue exitosa, el entorno de demostración presentó restricciones de autorización al consultar dispositivos desde el frontend.
+
+Ante esta situación decidí mantener una capa de datos simulados para asegurar una experiencia estable y funcional durante la evaluación.
+
+Este proceso me permitió reforzar la importancia de construir interfaces resilientes y preparadas para responder correctamente incluso cuando existen limitaciones externas.
 
 ---
 
@@ -151,7 +158,19 @@ Esta experiencia permitió entender mejor los desafíos asociados a la integraci
 
 Como mejora futura, la aplicación está preparada para integrar datos reales desde la API de Traccar, permitiendo actualizar la ubicación y el estado de los vehículos en tiempo real.
 
-También sería interesante incorporar animaciones suaves para el movimiento del marcador, indicadores más avanzados de estado y métricas adicionales para el monitoreo de flotas.
+También sería interesante incorporar animaciones suaves para el movimiento del marcador, indicadores más avanzados de estado, métricas adicionales para el monitoreo de flotas y una experiencia más completa basada en datos reales.
+
+---
+
+## Uso de Inteligencia Artificial
+
+Durante el desarrollo utilicé herramientas de Inteligencia Artificial como apoyo para investigar alternativas técnicas, resolver dudas puntuales y acelerar algunas tareas de implementación.
+
+La IA me ayudó especialmente en temas relacionados con React, Leaflet, accesibilidad, estados de carga, manejo de errores y exploración de la integración con Traccar.
+
+Sin embargo, todas las decisiones relacionadas con diseño, experiencia de usuario, accesibilidad, estructura de la aplicación y validación final del código fueron tomadas y revisadas por mí.
+
+La IA fue utilizada como una herramienta de apoyo dentro del proceso, no como un reemplazo del criterio de diseño ni de las decisiones técnicas del proyecto.
 
 ---
 
