@@ -11,7 +11,7 @@ function App() {
   const [selectedVehicle, setSelectedVehicle] = useState(vehicles[0]);
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);//error cambiar a tru para que aprezca
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
